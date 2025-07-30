@@ -18,6 +18,7 @@ _Screenshots will be added here_
 
 ## 🛠️ Tech Stack
 
+### Frontend (Mobile & Web)
 - **Framework**: React Native with Expo
 - **Language**: TypeScript
 - **Navigation**: Expo Router
@@ -26,6 +27,14 @@ _Screenshots will be added here_
 - **State Management**: React Hooks
 - **Development Tools**: ESLint, TypeScript, Metro bundler
 
+### Backend API
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MongoDB with Mongoose ODM
+- **Authentication**: JWT (JSON Web Tokens)
+- **Validation**: Express Validator
+- **Security**: Helmet, CORS, Rate Limiting
+
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
@@ -33,6 +42,7 @@ Before you begin, ensure you have the following installed:
 - Node.js (v16 or higher)
 - npm or yarn
 - Expo CLI (`npm install -g @expo/cli`)
+- MongoDB (local installation or MongoDB Atlas account)
 - For mobile development:
   - iOS: Xcode (macOS only)
   - Android: Android Studio
@@ -47,13 +57,31 @@ Before you begin, ensure you have the following installed:
    cd tech-app
    ```
 
-2. **Install dependencies**
+2. **Install frontend dependencies**
    ```bash
    npm install
    ```
 
-3. **Start the development server**
+3. **Set up the backend**
    ```bash
+   cd backend
+   npm install
+   
+   # Copy environment template
+   cp .env.example .env
+   
+   # Edit .env with your MongoDB URI and other settings
+   ```
+
+4. **Start the backend server**
+   ```bash
+   # In the backend directory
+   npm run dev
+   ```
+
+5. **Start the frontend development server**
+   ```bash
+   # In the root directory
    npm run dev
    ```
 
@@ -102,6 +130,14 @@ tech-app/
 │   └── profile.tsx        # User profile screen
 ├── assets/                # Static assets
 │   └── images/           # App icons and images
+├── backend/               # Backend API server
+│   ├── src/              # Source code
+│   │   ├── models/       # Database models
+│   │   ├── routes/       # API routes
+│   │   ├── middleware/   # Custom middleware
+│   │   └── server.js     # Main server file
+│   ├── package.json      # Backend dependencies
+│   └── README.md         # Backend documentation
 ├── components/            # Reusable UI components
 │   ├── Button.tsx        # Custom button component
 │   └── Icon.tsx          # Icon component
